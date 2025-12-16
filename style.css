@@ -1,0 +1,163 @@
+/* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .font-league {
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        /* Image Placeholder Utility - BENAR-BENAR TRANSPARAN */
+        .img-placeholder {
+            background-color: transparent; /* Tidak ada warna latar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d1d5db; /* Warna teks abu-abu muda */
+            font-size: 0.75rem;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+            border: none; /* Tidak ada garis tepi */
+        }
+
+        /* Forum Chat Bubble Triangle */
+        .forum-bubble::before {
+            content: "";
+            position: absolute;
+            left: -14px; 
+            top: 0; 
+            width: 0; 
+            height: 0; 
+            border-top: 0 solid transparent; 
+            border-bottom: 15px solid transparent; 
+            border-right: 15px solid #1832a3; 
+        }
+
+        /* Utility classes for transitions */
+        .page-transition {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .page-transition.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Store Dropdown Animation */
+        .store-dropdown {
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+        }
+        .store-dropdown.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .store-dropdown {
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+        }
+        .store-dropdown.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .store-dropdown.hide {
+            opacity: 0;
+            transform: translateY(-12px);
+            pointer-events: none;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            color: rgba(255,255,255,0.8);
+            user-select: none;
+            line-height: 1;
+        }
+
+        .password-toggle:hover {
+            color: #ffffff;
+        }
+        .game-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
+
+    margin-left: -9px;
+
+    transform: translate(-50%, -50%) scale(0.98);
+    opacity: 0;
+    pointer-events: none;
+
+    background: #ffffff;
+    padding: 12x 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 40;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.game-popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+
+
+/* Item popup dengan tinggi konsisten */
+.game-popup a {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #1832a3;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.game-popup a:hover {
+    background: #f3f4f6;
+}
